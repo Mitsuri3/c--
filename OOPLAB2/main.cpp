@@ -54,7 +54,18 @@ int main() {
     std::cin >> x;
     std::cout << "p2(" << x << ") = " << p2.evaluate(x) << std::endl;
     
+    // 4. Работа с производной
+    std::cout << "\n=== Производная многочлена ===" << std::endl;
+    Polynomial p2_deriv = p2.derivative();
+    std::cout << "Производная p2: ";
+    p2_deriv.print();
+    std::cout << "Значение производной в точке " << x << ": " 
+              << p2_deriv.evaluate(x) << std::endl;
+              
+
     std::cout << "\n=== Завершение программы ===" << std::endl;
+
+
     return 0;
 }
 

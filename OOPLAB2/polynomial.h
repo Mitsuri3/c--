@@ -38,6 +38,9 @@ public:
     std::string toString() const;
     void print() const;
     void print(std::ostream& out) const;
+
+    // Производная
+    Polynomial derivative() const;
     
     // Оператор присваивания
     Polynomial& operator=(const Polynomial& other);

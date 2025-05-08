@@ -138,6 +138,20 @@ void Polynomial::print(std::ostream& out) const {
     out << toString() << std::endl;
 }
 
+// Производная
+Polynomial Polynomial::derivative() const {
+    if (degree == 0) {
+        return Polynomial(0, {0});
+    }
+    
+    std::vector<double> new_coeffs(degree);
+    for (int i = 0; i < degree; ++i) {
+        new_coeffs[i] = coefficients[i] * (degree - i);
+    }
+    
+    return Polynomial(degree - 1, new_coeffs);
+}
+
 // Оператор присваивания
 Polynomial& Polynomial::operator=(const Polynomial& other) {
     if (this != &other) {
