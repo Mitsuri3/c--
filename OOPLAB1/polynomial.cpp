@@ -79,6 +79,20 @@ std::string Polynomial::toString() const {
     return oss.str();
 }
 
+// Производная многочлена (дополнительный метод)
+Polynomial Polynomial::derivative() const {
+    if (degree == 0) {
+        return Polynomial(0, {0});
+    }
+    
+    std::vector<double> new_coeffs;
+    for (int i = 0; i < degree; ++i) {
+        new_coeffs.push_back(coefficients[i] * (degree - i));
+    }
+    
+    return Polynomial(degree - 1, new_coeffs);
+}
+
 // Печать многочлена
 void Polynomial::print() const {
     std::cout << toString() << std::endl;

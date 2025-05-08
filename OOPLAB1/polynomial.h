@@ -21,6 +21,9 @@ public:
     // Основные методы
     double evaluate(double x) const; // Вычисление значения многочлена
     std::string toString() const; // Преобразование в строку
+
+    // Дополнительный метод (не указанный в задании)
+    Polynomial derivative() const; // Производная многочлена
     
     // Метод печати
     void print() const;

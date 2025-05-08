@@ -31,6 +31,16 @@ int main() {
         poly.print();
         std::cout << "P(" << x << ") = " << poly.evaluate(x) << "\n" << std::endl;
     }
+
+    // Демонстрация производной (дополнительный метод)
+    std::cout << "\nПроизводные многочленов:" << std::endl;
+    for (const auto& poly : polynomials) {
+        std::cout << "Исходный: ";
+        poly.print();
+        std::cout << "Производная: ";
+        poly.derivative().print();
+        std::cout << std::endl;
+    }
     
     return 0;
 }
